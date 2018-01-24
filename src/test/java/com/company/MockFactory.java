@@ -1,9 +1,7 @@
 package com.company;
 
-import com.company.textservice.service.QuoteExtractionResult.QuoteExtractionResultBuilder;
-import com.company.textservice.service.TextService;
-
-import java.util.Arrays;
+import com.company.textservice.service.QuoteFinder;
+import com.company.textservice.service.dto.ExtractionResultDtoBuilder;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -13,15 +11,12 @@ import static org.mockito.Mockito.when;
  */
 public class MockFactory {
 
+	public QuoteFinder getMockedTextService() {
+		QuoteFinder textService = mock(QuoteFinder.class);
+		when(textService.extractQuotes("badinput")).thenReturn(new ExtractionResultDtoBuilder().build());
+		when(textService.extractQuotes("Imagination is more important than knowledge.")).thenReturn(
+				new ExtractionResultDtoBuilder().addQuote("Imagination is more important than knowledge.", "A Einstein").build());
+		return textService;
 
-//	public TextService getMockedTextService() {
-//		TextService textService =  mock(TextService.class);
-//		when(textService.findtQuotes(Arrays.asList("badinput"))).
-//				thenReturn(new QuoteExtractionResultBuilder().addUnParsedLine("badinput").build());
-//		when(textService.findtQuotes(Arrays.asList("good\tinput"))).
-//				thenReturn(new QuoteExtractionResultBuilder().addParsedQuote("input").build());
-//		return textService;
-//
-//
-//	}
+	}
 }

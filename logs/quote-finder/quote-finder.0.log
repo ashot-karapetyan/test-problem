@@ -1,0 +1,7 @@
+2018-01-24 23:46:49,235  INFO TextServiceApplicationTests: - Starting TextServiceApplicationTests on SIS2N047.local with PID 67015 (started by ashot.karapetyan in /Users/ashot.karapetyan/Projects/other/text-service) 
+2018-01-24 23:46:49,237 DEBUG TextServiceApplicationTests: - Running with Spring Boot v2.0.0.BUILD-SNAPSHOT, Spring v5.0.3.BUILD-SNAPSHOT 
+2018-01-24 23:46:49,237  INFO TextServiceApplicationTests: - No active profile set, falling back to default profiles: default 
+2018-01-24 23:46:50,643  INFO QuotesProviderImpl: - Loaded 36159 quotes. 
+2018-01-24 23:46:51,381  INFO TextServiceApplicationTests: - Started TextServiceApplicationTests in 2.36 seconds (JVM running for 3.936) 
+2018-01-24 23:46:52,701  INFO QuotesProviderImpl: - Loaded 36159 quotes. 
+2018-01-24 23:46:53,095  INFO QuotesProviderImpl: - Loaded 36159 quotes. 

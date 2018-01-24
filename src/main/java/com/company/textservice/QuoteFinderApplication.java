@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TextServiceApplication {
+public class QuoteFinderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TextServiceApplication.class, args);
+		SpringApplication.run(QuoteFinderApplication.class, args);
 	}
 
 }

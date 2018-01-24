@@ -2,9 +2,9 @@
 <Configuration>
     <Properties>
 
-        <property name="log.file.name">text-parser</property>
+        <property name="log.file.name">quote-finder</property>
         <property name="log.file.ext">log</property>
-        <property name="log.path">logs/quote-detect-service</property>
+        <property name="log.path">logs/quote-finder</property>
     </Properties>
     <Appenders>
         <RollingFile name="LOGFILE"

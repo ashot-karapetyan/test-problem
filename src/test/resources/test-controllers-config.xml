@@ -12,5 +12,5 @@
 	<bean id="mockFactory" class="com.company.MockFactory"/>
 	<bean id="textService" factory-bean="mockFactory" factory-method="getMockedTextService"/>
 
-	<bean class="com.company.textservice.endpoint.TextController"/>
+	<bean class="com.company.textservice.endpoint.FinderController"/>
 </beans>

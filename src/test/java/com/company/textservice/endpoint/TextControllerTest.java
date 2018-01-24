@@ -1,6 +1,7 @@
 package com.company.textservice.endpoint;
 
-import com.company.textservice.service.TextService;
+import com.company.textservice.service.QuoteFinder;
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.util.Arrays;
 
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.emptyCollectionOf;
 import static org.mockito.Mockito.times;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -40,7 +42,7 @@ public class TextControllerTest {
 	private WebApplicationContext wac;
 
 	@Autowired
-	private TextService textService;
+	private QuoteFinder quoteFinder;
 
 	private MockMvc mockMvc;
 
@@ -56,21 +58,19 @@ public class TextControllerTest {
 		this.mockMvc.perform(post("/").content("badinput").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andDo(print())
-				.andExpect(jsonPath("parsedQuotes", emptyCollectionOf(String.class)))
-				.andExpect(jsonPath("unParsedLines", contains("badinput")));
+				.andExpect(jsonPath("quotes").isEmpty());
 
-//		Mockito.verify(textService, times(1)).findtQuotes(Arrays.asList("badinput"));
+		Mockito.verify(quoteFinder, times(1)).extractQuotes("badinput");
 	}
 
 	@Test
 	public void testParsed()
 			throws Exception {
-		this.mockMvc.perform(post("/").content("good\tinput").accept(MediaType.APPLICATION_JSON))
+		this.mockMvc.perform(post("/").content("Imagination is more important than knowledge.").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andDo(print())
-				.andExpect(jsonPath("parsedQuotes", contains("input")))
-				.andExpect(jsonPath("unParsedLines", emptyCollectionOf(String.class)));
+				.andExpect(jsonPath("quotes", Matchers.hasKey("Imagination is more important than knowledge.")));
 
-//		Mockito.verify(textService, times(1)).findtQuotes(Arrays.asList("good\tinput"));
+		Mockito.verify(quoteFinder, times(1)).extractQuotes("Imagination is more important than knowledge.");
 	}
 }

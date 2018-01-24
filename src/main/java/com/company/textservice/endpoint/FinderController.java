@@ -1,7 +1,7 @@
 package com.company.textservice.endpoint;
 
-import com.company.textservice.service.QuoteExtractionResult;
-import com.company.textservice.service.TextService;
+import com.company.textservice.service.QuoteFinder;
+import com.company.textservice.service.dto.ExtractionResultDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,24 +15,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import java.util.Arrays;
-
 /**
  * @author ashot.karapetyan on 1/23/18.
  */
 @RestController
-public class TextController {
+public class FinderController {
 
-	
-	private static final Logger logger = LogManager.getLogger(TextController.class);
+	private static final Logger logger = LogManager.getLogger(FinderController.class);
 
 	@Autowired
-	private TextService textService;
+	private QuoteFinder quoteFinder;
 
 	@PostMapping("/")
-	public QuoteExtractionResult getQuotes(@RequestBody String data) {
-		return this.textService.findQuotes(data);
+	public ExtractionResultDto getQuotes(@RequestBody String data) {
+		return this.quoteFinder.extractQuotes(data);
 	}
+
+
+
+
 
 	@ExceptionHandler(IllegalArgumentException.class)
 	public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
@@ -52,7 +53,6 @@ public class TextController {
 		return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
 	}
 
-
 	@ExceptionHandler(UnsatisfiedServletRequestParameterException.class)
 	public ResponseEntity<String> handleUnsatisfiedServletRequestParameterException(
 			UnsatisfiedServletRequestParameterException ex) {
@@ -61,8 +61,7 @@ public class TextController {
 	}
 
 	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-	public ResponseEntity<String> handleHttpRequestMethodNotSupportedException(
-			HttpRequestMethodNotSupportedException ex) {
+	public ResponseEntity<String> handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException ex) {
 		logger.error(ex::getMessage, ex);
 		return new ResponseEntity<>(ex.getMessage(), HttpStatus.METHOD_NOT_ALLOWED);
 	}
