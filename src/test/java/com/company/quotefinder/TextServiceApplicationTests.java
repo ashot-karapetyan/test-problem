@@ -1,4 +1,4 @@
-package com.company.textservice;
+package com.company.quotefinder;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

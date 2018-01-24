@@ -1,6 +1,6 @@
-package com.company.textservice.service;
+package com.company.quotefinder.service;
 
-import com.company.textservice.service.dto.ExtractionResultDto;
+import com.company.quotefinder.service.dto.ExtractionResultDto;
 
 import javax.validation.constraints.NotNull;
 

@@ -1,7 +1,7 @@
-package com.company.textservice.endpoint;
+package com.company.quotefinder.endpoint;
 
-import com.company.textservice.service.QuoteFinder;
-import com.company.textservice.service.dto.ExtractionResultDto;
+import com.company.quotefinder.service.QuoteFinder;
+import com.company.quotefinder.service.dto.ExtractionResultDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.company.textservice.service.dto;
+package com.company.quotefinder.service.dto;
 
 import javax.validation.constraints.NotNull;
 import java.util.LinkedHashMap;

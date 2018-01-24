@@ -1,7 +1,6 @@
-package com.company.textservice.service;
+package com.company.quotefinder.service;
 
-import com.company.textservice.service.provider.QuotesProvider;
-import com.company.textservice.service.provider.QuotesProviderImpl;
+import com.company.quotefinder.service.provider.QuotesProviderImpl;
 import org.assertj.core.util.Strings;
 import org.junit.Before;
 import org.junit.Test;

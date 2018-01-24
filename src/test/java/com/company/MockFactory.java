@@ -1,7 +1,7 @@
 package com.company;
 
-import com.company.textservice.service.QuoteFinder;
-import com.company.textservice.service.dto.ExtractionResultDtoBuilder;
+import com.company.quotefinder.service.QuoteFinder;
+import com.company.quotefinder.service.dto.ExtractionResultDtoBuilder;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

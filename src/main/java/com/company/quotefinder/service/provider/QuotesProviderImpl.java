@@ -1,6 +1,6 @@
-package com.company.textservice.service.provider;
+package com.company.quotefinder.service.provider;
 
-import com.company.textservice.service.SentenceExtractor;
+import com.company.quotefinder.service.SentenceExtractor;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import org.apache.logging.log4j.LogManager;

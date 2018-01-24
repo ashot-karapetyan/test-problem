@@ -1,9 +1,7 @@
-package com.company.textservice.service.dto;
+package com.company.quotefinder.service.dto;
 
 import com.google.common.collect.ImmutableMap;
 
-import javax.validation.constraints.NotNull;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**

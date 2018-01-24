@@ -1,4 +1,4 @@
-package com.company.textservice.service.provider;
+package com.company.quotefinder.service.provider;
 
 import java.util.Collection;
 import java.util.Optional;

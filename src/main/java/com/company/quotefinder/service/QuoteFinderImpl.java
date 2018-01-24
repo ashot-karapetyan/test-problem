@@ -1,8 +1,8 @@
-package com.company.textservice.service;
+package com.company.quotefinder.service;
 
-import com.company.textservice.service.dto.ExtractionResultDto;
-import com.company.textservice.service.dto.ExtractionResultDtoBuilder;
-import com.company.textservice.service.provider.QuotesProvider;
+import com.company.quotefinder.service.dto.ExtractionResultDto;
+import com.company.quotefinder.service.dto.ExtractionResultDtoBuilder;
+import com.company.quotefinder.service.provider.QuotesProvider;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 

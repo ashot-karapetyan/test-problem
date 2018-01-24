@@ -1,4 +1,4 @@
-package com.company.textservice.service;
+package com.company.quotefinder.service;
 
 import org.junit.Test;
 

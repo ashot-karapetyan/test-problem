@@ -1,8 +1,8 @@
-package com.company.textservice.config;
+package com.company.quotefinder.config;
 
-import com.company.textservice.service.*;
-import com.company.textservice.service.provider.QuotesProvider;
-import com.company.textservice.service.provider.QuotesProviderImpl;
+import com.company.quotefinder.service.*;
+import com.company.quotefinder.service.provider.QuotesProvider;
+import com.company.quotefinder.service.provider.QuotesProviderImpl;
 import com.google.common.base.Strings;
 import org.springframework.context.annotation.Bean;
 
