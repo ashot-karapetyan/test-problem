@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+
+        <property name="log.file.name">text-parser</property>
+        <property name="log.file.ext">log</property>
+        <property name="log.path">logs/quote-detect-service</property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="LOGFILE"
+                     fileName="${log.path}/${log.file.name}.0.${log.file.ext}"
+                     filePattern="${log.path}/${log.file.name}.%d{yyyy-MM-dd-HH}-%i.${log.file.ext}" append="true">
+            <PatternLayout pattern="%d %5p %c{1}:%L - %m %n"/>
+            <SizeBasedTriggeringPolicy size="5000K" />
+        </RollingFile>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %5p %c{1}:%L - %m %n" />
+        </Console>
+        <Console name="STDERR" target="SYSTEM_ERR">
+            <PatternLayout pattern="%d %5p %c{1}:%L - %m %n" />
+        </Console>
+        <Async name="ASYNC_ERROR">
+            <AppenderRef ref="LOGFILE" />
+            <AppenderRef ref="STDERR" />
+        </Async>
+        <Async name="ASYNC_LOGFILE">
+            <AppenderRef ref="LOGFILE" />
+        </Async>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.company" level="DEBUG" additivity="false">
+            <AppenderRef ref="ASYNC_LOGFILE" level="DEBUG"/>
+            <AppenderRef ref="ASYNC_ERROR" level="ERROR"/>
+        </Logger>
+
+
+
+        <Root level="ERROR">
+            <AppenderRef ref="ASYNC_ERROR"/>
+        </Root>
+    </Loggers>
+</Configuration>

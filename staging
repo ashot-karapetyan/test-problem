@@ -1,0 +1,349 @@
+KbConfigBuilder.configure {
+
+	/***** Classifiers sStart *****/
+
+	category("User", "C_USER", "cs_User") {
+		id("USERID")
+		sortBy("FIRSTNAME")
+		group("general", "") {
+			string("FIRSTNAME", "ui_um_User_First_Name_Label")
+			string("LASTNAME", "ui_um_User_Last_Name_Label")
+			string("USEREMAIL", "ui_um_User_Email_Label")
+			string("USERPHONE", "ui_um_User_Phone_Label")
+			string("USERCOMMENT", "ui_um_User_Comment", null, true)
+		}
+	}
+
+	category("location1", "C_LOCATION1", "cs_location1") {
+		isClassifier(false)
+		id("LOCATION1ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("location2", "C_LOCATION2", "cs_location2") {
+		id("LOCATION2ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name", null, false, false, false, true)
+			parentId("LOCATION1ID", "cs_location1", "location1")
+		}
+		string("CODE")
+	}
+
+	category("location3", "C_LOCATION3", "cs_location3") {
+		id("LOCATION3ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name", null, false, false, false, true)
+			parentId("LOCATION2ID", "cs_location2", "location2")
+		}
+		string("CODE")
+	}
+
+	category("location4", "C_LOCATION4", "cs_location4") {
+		id("LOCATION4ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name", null, false, false, false, true)
+			parentId("LOCATION3ID", "cs_location3", "location3")
+		}
+
+		string("CODE")
+	}
+
+	category("location5", "C_LOCATION5", "cs_location5") {
+		id("LOCATION5ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name", null, false, false, false, true)
+			parentId("LOCATION3ID", "cs_location3", "location3")
+		}
+		string("CODE")
+	}
+
+	category("location6", "C_LOCATION6", "cs_location6") {
+		id("LOCATION6ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name", null, false, false, false, true)
+			parentId("LOCATION5ID", "cs_location5", "location5")
+		}
+		string("CODE")
+	}
+
+	category("location7", "C_LOCATION7", "cs_location7") {
+		id("LOCATION7ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+			parentId("LOCATION5ID", "cs_location5", "location5")
+		}
+		string("CODE")
+	}
+
+	category("location8", "C_LOCATION8", "cs_location8") {
+		id("LOCATION8ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+			parentId("LOCATION7ID", "cs_location7", "location7")
+		}
+		string("CODE")
+	}
+
+	category("location9", "C_LOCATION9", "cs_location9") {
+		id("LOCATION9ID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+			parentId("LOCATION8ID", "cs_location8", "location8")
+		}
+		string("CODE")
+	}
+
+	category("LatrineType", "C_LATRINETYPE", "cs_LatrineType") {
+		id("LATRINETYPEID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("WallMaterial", "C_WALLMATERIAL", "cs_WallMaterial") {
+		id("WALLMATERIALID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("RoofMaterial", "C_ROOFMATERIAL", "cs_RoofMaterial") {
+		id("ROOFMATERIALID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("WaterSource", "C_WATERSOURCE", "cs_WaterSource") {
+		id("WATERSOURCEID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("AgriculturalLabor", "C_AGRICULTURALLABOR", "cs_AgriculturalLabor") {
+		id("AGRICULTURALLABORID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("AgriculturalLand", "C_AGRICULTURALLAND", "cs_AgriculturalLand") {
+		id("AGRICULTURALLANDID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("Gender", "C_GENDER", "cs_Gender") {
+		id("GENDERID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name", null, false, false, false, true)
+		}
+	}
+
+	category("ComplaintStatus", "C_COMPLAINTSTATUS", "cs_ComplaintStatus") {
+		id("COMPLAINTSTATUSID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name", null, false, false, false, true)
+		}
+	}
+
+	category("ComplaintType", "C_COMPLAINTTYPE", "cs_ComplaintType") {
+		id("COMPLAINTTYPEID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("YesNO", "C_YESNO", "cs_YesNo") {
+		id("YESNOID")
+		sortBy("name")
+		group("general", "") {
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("MaritalStatus", "C_MARITALSTATUS", "cs_MaritalStatus") {
+		id("MARITALSTATUSID")
+		sortBy("name")
+		group("general",""){
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("RelationshipToHead", "C_RELATIONSHIPTOHEAD", "cs_RelationshipToHead") {
+		id("RELATIONSHIPTOHEADID")
+		sortBy("name")
+		group("general",""){
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("Nationality", "C_NATIONALITY", "cs_Nationality") {
+		id("NATIONALITYID")
+		sortBy("name")
+		group("general",""){
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("Religion", "C_RELIGION", "cs_Religion") {
+		id("RELIGIONID")
+		sortBy("name")
+		group("general",""){
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("Profession", "C_PROFESSION", "cs_Occupation") {
+		id("PROFESSIONID")
+		sortBy("name")
+		group("general",""){
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("ResidentialStatus", "C_RESIDENTIALSTATUS", "cs_ResidentialStatus") {
+		id("RESIDENTIALSTATUSID")
+		sortBy("name")
+		group("general",""){
+			multilingualString("name", "cs_name")
+		}
+	}
+
+	category("EducationLevel", "C_EDUCATIONLEVEL", "cs_EducationLevel") {
+		id("EDUCATIONLEVELID")
+		sortBy("name")
+		group("general",""){
+			multilingualString("name", "cs_name")
+		}
+	}
+
+    category("EducationGrade", "C_EDUCATIONGRADE", "cs_EducationGrade") {
+        id("EDUCATIONGRADEID")
+        sortBy("name")
+        group("general", "") {
+            multilingualString("name", "cs_name")
+        }
+    }
+
+	/***** Classifiers End *****/
+
+	/***** HOUSEHOLD Start *****/
+
+	category("Household", "HOUSEHOLD", "cs_Household") {
+		isWithVersioning(true)
+		isWithEditableForm(true)
+		id("HOUSEHOLDID")
+		sortBy("HOUSEHOLDCODE")
+		date("HOUSEHOLDDATE", null, null, false, false, true)
+		string("HOUSEHOLDCODE", null, null, false, false, false, true)
+		integer("POVERTYSCORE", null, null, false, false, true)
+		classifier("LOCATION1ID", "location1")
+		classifier("HouseholdLOCATION2ID", "location2", null, "LOCATION2ID", false, false, true)
+		classifier("HouseholdLOCATION3ID", "location3", null, "LOCATION3ID", false, false, true)
+		classifier("HouseholdLOCATION4ID", "location4", null, "LOCATION4ID", false, false, true)
+		classifier("HouseholdLOCATION5ID", "location5", null, "LOCATION5ID", false, false, true)
+		classifier("HouseholdLOCATION6ID", "location6", null, "LOCATION6ID", false, false, true)
+		classifier("HouseholdLOCATION7ID", "location7", null, "LOCATION7ID", false, false, true)
+		classifier("HouseholdLOCATION8ID", "location8", null, "LOCATION8ID", false, false, true)
+		classifier("HouseholdLOCATION9ID", "location9", null, "LOCATION9ID", false, false, true)
+		integer("ROOMNUMBER")
+		integer("MEMBERCOUNT", null, null, false, false, true)
+		classifier("OWNERSHIPYESNOID", "YesNO")
+		classifier("WALLMATERIALID", "WallMaterial")
+		multilingualString("WALLMATERIALOTHER")
+		classifier("ROOFMATERIALID", "RoofMaterial")
+		multilingualString("ROOFMATERIALOTHER")
+		bool("HASWATERSOURCE", "WaterSource")
+		classifier("LATRINETYPEID", "LatrineType")
+		classifier("AGRICULTURALLANDID", "AgriculturalLand")
+		multiSelect("AGRICULTURALLABORID", "AgriculturalLabor")
+		string("HHHEAD_NID")
+		integer("HHHEAD_AGE")
+		multilingualString("HHHEAD_NAME")
+		date("HHHEAD_BIRTHDATE")
+		multilingualString("HHHEAD_OCCUPATION")
+		classifier("HHHEADGENDERID", "Gender")
+		classifier("WATERSOURCEID", "WaterSource")
+		integer("POVERTY_INDEX", null, null, false, false, true)
+		integer("POPULATION_INDEX", null, null, false, false, true)
+
+		multilingualString("CREATEDUSER_NAME")
+		multilingualString("UPDATEDUSER_NAME")
+		dateTime("DateUpdated", "DateUpdated", null, false, false, true, true)
+		dateTime("DateCreated", "DateCreated", null, false, false, true, true)
+	}
+
+	/***** HOUSEHOLD End *****/
+	/***** PERSON Start *****/
+
+	category("Person", "PERSON", "cs_Person") {
+		isWithVersioning(true)
+		isWithEditableForm(true)
+		id("PERSONID")
+		sortBy("NAME")
+		//string("IMAGENAME")
+		//classifier("IMAGEDOCUMENTID", "DOCUMENT")
+		string("NID", null, null, false, false, false, true)
+		string("NAME_ENG", null, null, false, false, false, true)
+                string("NAME_BEN", null, null, false, false, false, true)
+		date("BIRTHDATE", null, null, false, false, true)
+		integer("AGE", null, null, false, false, true)
+		date("DEATHDATE")
+		classifier("PersonGENDERID", "Gender", null, "GENDERID", false, false, true)
+		classifier("MARITALSTATUSID", "MaritalStatus")
+		classifier("NATIONALITYID", "Nationality")
+		classifier("RELIGIONID", "Religion")
+		string("BID")
+		string("BIRTHPLACE")
+		string("ADDRESS")
+		classifier("RESIDENTIALSTATUSID", "ResidentialStatus")
+		string("FATHERNAME")
+		string("FATHERSERIALNUMBER")
+		string("MOTHERNAME")
+		string("MOTHERSERIALNUMBER")
+		string("SPOUSENAME")
+		string("SPOUSESERIALNUMBER")
+		classifier("EDUCATIONGRADEID", "EducationGrade")
+		classifier("PROFESSIONID", "Profession")
+		classifier("PERSONLOCATION2ID", "location2", null, "LOCATION2ID", false, false, true)
+		classifier("PERSONLOCATION3ID", "location3", null, "LOCATION3ID", false, false, true)
+		classifier("PERSONLOCATION4ID", "location4", null, "LOCATION4ID", false, false, true)
+		classifier("PERSONLOCATION5ID", "location5", null, "LOCATION5ID", false, false, true)
+		classifier("PERSONLOCATION6ID", "location6", null, "LOCATION6ID", false, false, true)
+		classifier("PERSONLOCATION7ID", "location7", null, "LOCATION7ID", false, false, true)
+		classifier("PERSONLOCATION8ID", "location8", null, "LOCATION8ID", false, false, true)
+		classifier("PERSONLOCATION9ID", "location9", null, "LOCATION9ID", false, false, true)
+		string("householdcode")
+
+		multilingualString("CREATEDUSER_NAME")
+		multilingualString("UPDATEDUSER_NAME")
+		dateTime("DateUpdated", "DateUpdated", null, false, false, true, true)
+		dateTime("DateCreated", "DateCreated", null, false, false, true, true)
+
+	}
+
+	/***** PERSON End *****/
+}

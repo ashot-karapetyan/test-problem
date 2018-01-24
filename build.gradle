@@ -1,0 +1,51 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.company'
+version = '1.0.0'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('com.google.guava:guava:21.0')
+
+	//log4j2
+	compile('org.apache.logging.log4j:log4j-api:2.6.2')
+	compile('org.apache.logging.log4j:log4j-core:2.6.2')
+	runtime('org.apache.logging.log4j:log4j-web:2.6.2')
+
+	//log4j2 bridges
+	compile('org.apache.logging.log4j:log4j-1.2-api:2.6.2')
+	compile('org.apache.logging.log4j:log4j-jul:2.6.2')
+	compile('org.apache.logging.log4j:log4j-jcl:2.6.2')
+
+
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.hamcrest:hamcrest-junit:2.0.0.0')
+	testCompile('org.mockito:mockito-core:2.8.47')
+}
